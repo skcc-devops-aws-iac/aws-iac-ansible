@@ -1,7 +1,7 @@
 terraform {
   backend "remote" {
     hostname     = "app.terraform.io"
-    organization = "skcc-devops-aws"
+    organization = "iac-lecture-ansible"
 
     workspaces {
       name = "iac-lecture-ansible-network"
