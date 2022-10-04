@@ -15,6 +15,7 @@ data "terraform_remote_state" "this" {
   for_each = local.config.remote_states
 
   backend = "remote"
+  /* backend = "local" */
 
   config = {
     organization = each.value.organization
