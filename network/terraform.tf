@@ -1,10 +1,10 @@
 terraform {
   backend "remote" {
     hostname     = "app.terraform.io"
-    organization = "fastcampus-devops"
+    organization = "iac-lecture-ansible"
 
     workspaces {
-      name = "terraform-lab-network"
+      name = "iac-lecture-ansible-network"
     }
   }
 }
