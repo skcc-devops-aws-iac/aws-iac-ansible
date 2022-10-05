@@ -27,7 +27,7 @@
   # Docs: https://docs.ansible.com/ansible/latest/collections/ansible/posix/synchronize_module.html
   - name: "Upload web directory"
     synchronize:
-      src: ./files/html/
+      src: files/html/
       dest: /var/www/html
       archive: true
       checksum: true
@@ -37,7 +37,7 @@
   # Docs: https://docs.ansible.com/ansible/latest/collections/ansible/builtin/copy_module.html
   - name: "Copy nginx configuration file"
     copy:
-      src: ./files/default
+      src: files/default
       dest: /etc/nginx/sites-enabled/default
       owner: "{{ ansible_user }}"
       group: "{{ ansible_user }}"
