@@ -6,7 +6,7 @@
   tasks:
   # Docs: https://docs.ansible.com/ansible/latest/collections/ansible/builtin/user_module.html
   - name: "Create a user"
-    user: "name=fastcampus shell=/bin/bash"
+    user: "name=awsiac shell=/bin/bash"
 
   - name: "Hello World"
     command: "echo 'Hello World!'"
