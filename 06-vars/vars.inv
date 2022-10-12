@@ -3,8 +3,8 @@ amazon1 ansible_host=15.164.244.98 ansible_user=ec2-user
 amazon2 ansible_host=52.78.239.25 ansible_user=ec2-user
 
 [ubuntu]
-ubuntu1 ansible_host=ec2-43-201-53-26.ap-northeast-2.compute.amazonaws.com ansible_user=ubuntu
-ubuntu2 ansible_host=ec2-43-201-83-32.ap-northeast-2.compute.amazonaws.com ansible_user=ubuntu
+ubuntu1 ansible_host=ec2-43-201-53-26.ap-northeast-2.compute.amazonaws.com ansible_user=ubuntu user_name=test_00 user_comment="from inventory" user_shell=/bin/bash user_uid=7777
+ubuntu2 ansible_host=ec2-43-201-83-32.ap-northeast-2.compute.amazonaws.com ansible_user=ubuntu user_name=test_00 user_comment="from inventory" user_shell=/bin/bash user_uid=7777
 
 [linux:children]
 amazon
