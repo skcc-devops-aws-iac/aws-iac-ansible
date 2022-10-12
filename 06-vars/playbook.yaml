@@ -5,7 +5,7 @@
   become: true
 
   vars:
-    user_name: "posquit0"
+    user_name: "test_00"
     user_comment: "from playbook vars"
     user_shell: /bin/bash
     user_uid: "7777"
@@ -15,7 +15,7 @@
   # Docs: https://docs.ansible.com/ansible/latest/collections/ansible/builtin/user_module.html
   # - name: "Create a user"
   #   user:
-  #     name: "posquit0"
+  #     name: "test_00"
   #     comment: "hard coding"
   #     shell: "/bin/bash"
   #     uid: "7777"
