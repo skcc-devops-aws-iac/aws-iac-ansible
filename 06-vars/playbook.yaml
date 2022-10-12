@@ -3,13 +3,14 @@
 - name: Example
   hosts: ubuntu
   become: true
+
   vars:
     user_name: "posquit0"
     user_comment: "from playbook vars"
     user_shell: /bin/bash
     user_uid: "7777"
-  # vars_files:
-  # - vars.yaml
+  vars_files:
+  - vars.yaml
   tasks:
   # Docs: https://docs.ansible.com/ansible/latest/collections/ansible/builtin/user_module.html
   # - name: "Create a user"
