@@ -72,11 +72,11 @@
   #   when:
   #   - ansible_facts['distribution'] == 'Amazon'
 
-  # - name: "Print users"
-  #   command: "cut -d: -f1 /etc/passwd"
-  #   register: users
+  - name: "Print users"
+    command: "cut -d: -f2 /etc/passwd"
+    register: users
 
-  # - name: "Is there claud"
-  #   debug:
-  #     msg: "There is no claud"
-  #   when: users.stdout.find('claud') == -1
+  - name: "Is there cloud"
+    debug:
+      msg: "There is no cloud"
+    when: users.stdout.find('cloud') == -1
