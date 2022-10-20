@@ -9,7 +9,7 @@
   - name: "Install python on Amazon Linux"
     yum:
       name: "python3"
-      state: "present"
+      state: "removed"
 
 - name: Prepare Ubuntu
   hosts: ubuntu
@@ -19,7 +19,7 @@
   - name: "Install python on Ubuntu"
     apt:
       name: "python3"
-      state: "present"
+      state: "absent"
       update_cache: true
 
 - name: Debug
