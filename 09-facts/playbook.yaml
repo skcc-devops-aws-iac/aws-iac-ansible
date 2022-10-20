@@ -1,7 +1,7 @@
 ---
 
 - name: Prepare Amazon Linux
-  hosts: amazon
+  hosts: all
   become: true
   gather_facts: false
   tasks:
@@ -9,24 +9,14 @@
   - name: "Install python on Amazon Linux"
     yum:
       name: "python3"
-      state: "removed"
+      state: "present"
+    when:
+    - ansible_facts['distribution'] == 'Amazon'
 
-- name: Prepare Ubuntu
-  hosts: ubuntu
-  become: true
-  gather_facts: false
-  tasks:
   - name: "Install python on Ubuntu"
     apt:
       name: "python3"
-      state: "absent"
+      state: "present"
       update_cache: true
-
-- name: Debug
-  hosts: all
-  become: true
-  tasks:
-  # Docs: https://docs.ansible.com/ansible/latest/collections/ansible/builtin/user_module.html
-  - name: "Debug Ansible facts"
-    debug:
-      var: ansible_facts
+    when:
+    - ansible_facts['distribution'] == 'Ubuntu'
