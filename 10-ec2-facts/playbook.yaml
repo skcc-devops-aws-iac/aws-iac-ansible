@@ -9,9 +9,9 @@
     amazon.aws.ec2_metadata_facts: {}
 
   # Docs: https://docs.ansible.com/ansible/latest/collections/ansible/builtin/user_module.html
-  - name: "Debug Ansible facts"
-    debug:
-      var: ansible_facts
+  # - name: "Debug Ansible facts"
+  #   debug:
+  #     var: ansible_facts
 
   - name: "Set VPC CIDR"
     set_fact:
@@ -26,7 +26,12 @@
       vpc_dns_server: '{{ vpc_cidr | ipaddr(2) | ipaddr("address") }}'
       vpc_network: '{{ vpc_cidr | ipaddr("network") }}'
       vpc_netmask: '{{ vpc_cidr | ipaddr("netmask") }}'
+    register: result
 
-  - name: "Debug variables"
+  # - name: "Debug variables"
+  #   debug:
+  #     var: vars
+
+  - name: "Debug VPC facts"
     debug:
-      var: vars
+      var: result
