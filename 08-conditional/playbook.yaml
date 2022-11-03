@@ -76,7 +76,7 @@
     command: "cut -d: -f1 /etc/passwd"
     register: users 
 
-  - name: "Is there cloud"
+  - name: "Is there claud"
     debug:
-      msg: "There is no cloud"
-    when: users.stdout.find('cloud') == -1
+      msg: "There is no claud"
+    when: users.stdout.find('claud') == -1
