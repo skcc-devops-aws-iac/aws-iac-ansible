@@ -1,29 +1,7 @@
----
-
-- name: Prepare
-  hosts: all
-  become: true
-  gather_facts: false
-  tasks:
-  - name: "Install python on Amazon Linux"
-    yum:
-      name: "python3"
-      state: "present"
-    when:
-    - ansible_facts['distribution'] == 'Amazon'
-
-  - name: "Install python on Ubuntu"
-    apt:
-      name: "python3"
-      state: "present"
-      update_cache: true
-    when:
-    - ansible_facts['distribution'] == 'Ubuntu'
-
 # ---
 
-# - name: Prepare Amazon Linux
-#   hosts: amazon
+# - name: Prepare
+#   hosts: all
 #   become: true
 #   gather_facts: false
 #   tasks:
@@ -31,14 +9,44 @@
 #     yum:
 #       name: "python3"
 #       state: "present"
+#     when:
+#     - ansible_facts['distribution'] == 'Amazon'
 
-# - name: Prepare Ubuntu
-#   hosts: ubuntu
-#   become: true
-#   gather_facts: false
-#   tasks:
 #   - name: "Install python on Ubuntu"
 #     apt:
 #       name: "python3"
 #       state: "present"
-#       update_cache: true  
+#       update_cache: true
+#     when:
+#     - ansible_facts['distribution'] == 'Ubuntu'
+
+---
+
+- name: Prepare Amazon Linux
+  hosts: amazon
+  become: true
+  gather_facts: false
+  tasks:
+  - name: "Install python on Amazon Linux"
+    yum:
+      name: "python3"
+      state: "present"
+
+- name: Prepare Ubuntu
+  hosts: ubuntu
+  become: true
+  gather_facts: false
+  tasks:
+  - name: "Install python on Ubuntu"
+    apt:
+      name: "python3"
+      state: "present"
+      update_cache: true 
+
+# - name: Debug
+#   hosts: all
+#   become: true
+#   tasks:
+#   - name: "Debug Ansible facts"
+#     debug:
+#       var: ansible_facts 
