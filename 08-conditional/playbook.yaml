@@ -73,8 +73,8 @@
   #   - ansible_facts['distribution'] == 'Amazon'
 
   - name: "Print users"
-    command: "cut -d: -f2 /etc/passwd"
-    register: users
+    command: "cut -d: -f1 /etc/passwd"
+    register: users 
 
   - name: "Is there cloud"
     debug:
