@@ -1,11 +1,10 @@
 ---
 
-- name: Prepare Amazon Linux
+- name: Prepare
   hosts: all
   become: true
   gather_facts: false
   tasks:
-  # Docs: https://docs.ansible.com/ansible/latest/collections/ansible/builtin/user_module.html
   - name: "Install python on Amazon Linux"
     yum:
       name: "python3"
@@ -20,3 +19,26 @@
       update_cache: true
     when:
     - ansible_facts['distribution'] == 'Ubuntu'
+
+# ---
+
+# - name: Prepare Amazon Linux
+#   hosts: amazon
+#   become: true
+#   gather_facts: false
+#   tasks:
+#   - name: "Install python on Amazon Linux"
+#     yum:
+#       name: "python3"
+#       state: "present"
+
+# - name: Prepare Ubuntu
+#   hosts: ubuntu
+#   become: true
+#   gather_facts: false
+#   tasks:
+#   - name: "Install python on Ubuntu"
+#     apt:
+#       name: "python3"
+#       state: "present"
+#       update_cache: true  
