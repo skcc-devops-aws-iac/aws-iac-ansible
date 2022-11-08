@@ -4,7 +4,7 @@ terraform {
     organization = "iac-lecture-ansible"
 
     workspaces {
-      name = "iac-lecture-ansible-network-test01"
+      name = "iac-lecture-ansible-network"
     }
   }
 }
